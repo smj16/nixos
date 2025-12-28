@@ -104,6 +104,9 @@
     wget
     curl
     alacritty
+    git
+    git-credential-manager
+    fzf
   ];
 
   fonts.packages = with pkgs; [

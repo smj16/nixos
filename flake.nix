@@ -19,7 +19,11 @@
         ./configuration.nix
         nixvim.nixosModules.nixvim
         {
-          programs.nixvim.enable = true;
+          programs.nixvim = {
+            enable = true;
+            plugins.fzf-lua.enable = true;
+            plugins.git-worktree.enable = true;
+          };
         }
         home-manager.nixosModules.home-manager
         {
