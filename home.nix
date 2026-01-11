@@ -12,4 +12,15 @@
       lal = "ls -al";
     };
   };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    plugins = with pkgs.vimPlugins;
+    [
+      yankring
+      vim-nix
+    ];
+    viAlias = true;
+    vimAlias = true;   
+  };
 }

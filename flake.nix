@@ -6,10 +6,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # nixvim = {
+    #  url = "github:nix-community/nixvim/nixos-25.11";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
   outputs = { self, nixpkgs, nixvim, home-manager, ... }: {
     # this .nixos is the hostname 
@@ -17,14 +17,14 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        nixvim.nixosModules.nixvim
-        {
-          programs.nixvim = {
-            enable = true;
-            plugins.fzf-lua.enable = true;
-            plugins.git-worktree.enable = true;
-          };
-        }
+        #nixvim.nixosModules.nixvim
+        #{
+        #  programs.nixvim = {
+        #    enable = true;
+        #    plugins.fzf-lua.enable = true;
+        #    plugins.git-worktree.enable = true;
+        #  };
+        #}
         home-manager.nixosModules.home-manager
         {
           home-manager = {
